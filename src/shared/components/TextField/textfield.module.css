@@ -1,0 +1,22 @@
+.text_field_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+  margin: 0 2em;
+  margin-bottom: 1.5em;
+}
+
+textarea {
+  border: 1px solid #c0c0c0;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #111111;
+  padding: .7em;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.2px;
+  outline: 0;
+}

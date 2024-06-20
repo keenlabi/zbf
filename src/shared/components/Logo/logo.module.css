@@ -1,0 +1,8 @@
+.logoWrapper {
+  width: max-content;
+}
+.text {
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--font-size-24);
+  font-style: italic;
+}

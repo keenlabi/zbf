@@ -1,0 +1,47 @@
+.heading1 {
+    font-weight: var(--font-weight-black);
+    font-size: var(--font-size-36);
+    color: var(--dark-blue-accent-400);
+}
+.heading2 {
+    font-weight: var(--font-weight-extrabold);
+    font-size: var(--font-size-32);
+    color: var(--dark-blue-accent-400);
+}
+.heading3 {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-24);
+    color: var(--dark-blue-accent-400);
+}
+.heading4 {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-22);
+    color: var(--dark-blue-accent-400);
+}
+.heading5 {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-20);
+    color: var(--dark-blue-accent-400);
+}
+
+.subHeading1 {
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-18);
+    color: var(--grey-accent-400);
+}
+.subHeading2 {
+    font-weight: var(--font-weight-extrabold);
+    font-size: var(--font-size-32);
+}
+.subHeading3 {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-24);
+}
+.subHeading4 {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-22);
+}
+.subHeading5 {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-20);
+}

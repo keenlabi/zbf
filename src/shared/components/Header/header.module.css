@@ -1,0 +1,60 @@
+.header_wrapper {
+  margin: 0;
+  border-bottom: 1px solid #E4E7EC;
+}
+
+.header_top {
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  background: #292424;
+  padding: 1em 4em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  padding: 1em 4em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  border: 1px solid transparent;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+nav ul li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.auth_cart_group {
+  display: flex;
+  gap: 2em;
+}
+
+.acct {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 500;
+}

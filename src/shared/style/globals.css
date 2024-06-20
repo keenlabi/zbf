@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-family: var(--Inter);
+}
+body {
+    background-color: var(--white-color-100);
+    color: var(--dark-blue-accent-200);
+    font-weight: var(--font-weight-normal);
+}
+a {
+    text-decoration: none;
+    color: initial;
+}
+a._orange {
+    color: var(--orange-accent-500);
+    font-weight: var(--font-weight-medium);
+}

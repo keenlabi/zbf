@@ -1,0 +1,9 @@
+.sidebar_wrapper {
+  width: 23%;
+}
+
+.sidebar_wrapper h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 1.5em;
+}

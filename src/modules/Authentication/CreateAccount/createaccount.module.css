@@ -1,0 +1,14 @@
+.formHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8em;
+  margin-block: 1em;
+}
+
+.linkToCreateAccount {
+  display: flex;
+  gap: 0.5rem;
+  text-align: center;
+  justify-content: center;
+}

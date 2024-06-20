@@ -1,0 +1,34 @@
+.form_heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8em;
+  text-align: center;
+  width: 100%;
+}
+
+.form {
+  width: 420px;
+  margin: 2em auto;
+}
+
+.form_heading h2 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33px;
+}
+
+.form_heading p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.signin_link {
+  color: #0000FF;
+  text-decoration: none;
+}
+
+.btn {
+  margin-block: 3em;
+}

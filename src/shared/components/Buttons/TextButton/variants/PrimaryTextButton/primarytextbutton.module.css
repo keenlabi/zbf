@@ -1,0 +1,40 @@
+.primaryButton {
+  all: unset;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+
+  background-color: var(--orange-accent-400);
+  color: #fff;
+}
+.primaryButton:disabled {
+  opacity: 0.5;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+  padding-block: 16px;
+}
+
+/* .background_type:hover {
+  
+}
+
+.background_type:active {
+  
+}
+
+.no_background_type:hover {
+  
+}
+
+.no_background_type:active {
+  
+} */

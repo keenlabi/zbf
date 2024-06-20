@@ -1,0 +1,29 @@
+.progress_wrapper {
+  position: absolute;
+  top: 120px;
+  width: 83%;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 23px;
+  color: #0000FF;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goback {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  cursor: pointer;
+}
+
+.goback img {
+  width: 22px;
+  display: block;
+}
+
+.steps {
+  margin-left: auto;
+}

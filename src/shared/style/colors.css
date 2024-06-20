@@ -1,0 +1,37 @@
+:root {
+
+/**** COLOR PALLETE ****/
+    
+    /* LIGHT COLORS  */
+    --white-accent-100: #ffffff;
+
+    /* BLACK COLORS  */
+    --black-accent-100: #000000;
+
+    /* DARK BLUE COLORS  */
+    --dark-blue-accent-100: #D0D5DD;
+    --dark-blue-accent-200: #667185;
+    --dark-blue-accent-300: #344054;
+    --dark-blue-accent-400: #101928;
+
+    /* GREY COLORS */
+    --grey-accent-100: #C4C4C4;
+    --grey-accent-200: #D0D5DD;
+    
+    /* FADED GREY */
+    --grey-faded-accent-100:#FBF1F1;
+    --grey-faded-accent-200:#FFF6F1;
+    --grey-faded-accent-300: #FFECE5;
+    
+    /* ORANGE COLORS */
+    --orange-faded-accent-100:#FBF1F1;
+    --orange-faded-accent-200:#FFF6F1;
+    --orange-faded-accent-300: #FFECE5;
+    --orange-accent-100: #FA9874;
+    --orange-accent-200: #F56630;
+    --orange-accent-300: #EC5B25;
+    --orange-accent-400: #EB5017;
+    --orange-accent-500: #CC400C;
+
+    --error-color: red;
+}
