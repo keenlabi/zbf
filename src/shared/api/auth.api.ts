@@ -7,30 +7,20 @@ export interface ILoginActionPayload {
     password:string;
 }
 
-export interface IAuthNetworkResponse extends INetworkResponse {
-    data:{ user:IUserProfile }
-}
-
 // register
 export function RegisterAction(payload:ILoginActionPayload) {
-    return new Promise<IAuthNetworkResponse>((resolve, reject)=> {
+    return new Promise<INetworkResponse<{user:IUserProfile}>>((resolve, reject)=> {
         postFetch("/api/auth/register", payload)
-        .then((response)=> resolve({
-            ...response,
-            data:{ user: response.data?.user }
-        }))
+        .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })
 }
 
 // login
 export function LoginAction(payload:ILoginActionPayload) {
-    return new Promise<IAuthNetworkResponse>((resolve, reject)=> {
+    return new Promise<INetworkResponse<{user:IUserProfile}>>((resolve, reject)=> {
         postFetch("/api/auth/login", payload)
-        .then((response)=> resolve({
-            ...response,
-            data:{ user: response.data?.user }
-        }))
+        .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })
 }

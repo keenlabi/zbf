@@ -1,7 +1,7 @@
-export interface INetworkResponse {
+export interface INetworkResponse<T> {
     statusCode:string;
     message:string;
-    data?:INetworkResponseData;
+    data?:T;
 }
 
 export interface INetworkResponseData {
