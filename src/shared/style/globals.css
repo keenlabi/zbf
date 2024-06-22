@@ -19,3 +19,6 @@ a._orange {
     color: var(--orange-accent-500);
     font-weight: var(--font-weight-medium);
 }
+img {
+    display: block;
+}

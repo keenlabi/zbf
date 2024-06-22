@@ -19,7 +19,7 @@ export interface IInputFieldModel {
 export interface IInputFieldProps {
   type?:"text"|"password"|"number"|"email";
   label?:string;
-  name:string;
+  name?:string;
   error?:string;
   required?:boolean;
   disabled?:boolean;
