@@ -76,7 +76,7 @@ export default function CreateAccount() {
         <SizedBox height="30px" />
 
         <div className={styles.linkToCreateAccount}>
-          <div className={styles.text}>First time?</div>
+          <div className={styles.text}>Already have an account?</div>
           <Link 
             className={"_orange"} 
             to={"/login"}

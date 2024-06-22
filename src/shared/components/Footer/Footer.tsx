@@ -5,7 +5,7 @@ import fbIcon from "src/shared/assets/icons/Fb.svg";
 import twIcon from "src/shared/assets/icons/Tw.svg";
 import igIcon from "src/shared/assets/icons/Ig.svg";
 import lnIcon from "src/shared/assets/icons/Ln.svg";
-import PrimaryTextButton from "../Buttons/IconButton/variants/PrimaryTextButton/PrimaryTextButton";
+import PrimaryTextButton from "../Buttons/TextButton/variants/PrimaryTextButton/PrimaryTextButton";
 
 export default function Footer() {
   return (
@@ -20,7 +20,7 @@ export default function Footer() {
 
         <div className={styles.footer_top_right}>
           <InputField type="text" onInput={() => {}} prefixIcon={emailIcon} inputWidth="400px" backgroundColor="#fff" />
-          <PrimaryTextButton label="Subscribe" action={() => {}} variant="no_background_type" extrastyle={styles.subscribe_btn} />
+          <PrimaryTextButton label="Subscribe" action={() => {}} extrastyle={styles.subscribe_btn} />
         </div>
       </div>
 

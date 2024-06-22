@@ -3,6 +3,7 @@
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  padding-inline: 1em;
 
   display: flex;
   align-items: center;
@@ -11,7 +12,10 @@
 
   background-color: var(--orange-accent-400);
   color: #fff;
+  min-width: max-content;
+  height: 50px;
 }
+
 .primaryButton:disabled {
   opacity: 0.5;
 }
@@ -19,22 +23,5 @@
 .label {
   font-size: 14px;
   font-weight: 500;
-  line-height: 18.2px;
-  padding-block: 16px;
+  line-height: 100%;
 }
-
-/* .background_type:hover {
-  
-}
-
-.background_type:active {
-  
-}
-
-.no_background_type:hover {
-  
-}
-
-.no_background_type:active {
-  
-} */

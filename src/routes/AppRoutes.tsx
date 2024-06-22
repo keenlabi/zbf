@@ -1,6 +1,6 @@
-import Home from "src/modules/Landing/Home";
 import AuthRoutes from "./AuthRoutes";
 import { IAppRouterType } from "./routes.types";
+import Home from "src/modules/Home/Home";
 
 const AppRoutes:IAppRouterType[] = [
     ...AuthRoutes,

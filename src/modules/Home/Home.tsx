@@ -1,9 +1,9 @@
-import styles from "./dashboard.module.css";
+import styles from "./home.module.css"
 import Footer from "src/shared/components/Footer/Footer";
 import Header from "src/shared/components/Header/Header";
 import Sidebar from "src/shared/components/Sidebar/Sidebar";
 
-export default function Dashboard() {
+export default function Home() {
   return (
     <div className={styles.dashboard_wrapper}>
       <Header />
