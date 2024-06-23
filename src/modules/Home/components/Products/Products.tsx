@@ -1,5 +1,6 @@
 import ProductCard from "src/shared/components/ProductCard";
 import styles from "./products.module.css";
+import Pagination from "src/shared/components/Pagination";
 
 export default function Products() {
   return (
@@ -18,7 +19,9 @@ export default function Products() {
         <ProductCard />
       </main>
 
-      <div className={styles.productsFooter}></div>
+      <div className={styles.productsFooter}>
+        <Pagination />
+      </div>
     </div>
   );
 }
