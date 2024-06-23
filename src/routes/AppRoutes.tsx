@@ -3,6 +3,7 @@ import AuthRoutes from "./AuthRoutes";
 import { IAppRouterType } from "./routes.types";
 import Home from "src/modules/Home/Home";
 import Product from "src/modules/Home/components/Products";
+import Cart from "src/modules/Home/components/Cart";
 
 const AppRoutes: IAppRouterType[] = [
   ...AuthRoutes,
@@ -21,6 +22,11 @@ const AppRoutes: IAppRouterType[] = [
         path: "product-detail/:productId",
         title: "Product details",
         element: <ProductDetail />,
+      },
+      {
+        path: "cart",
+        title: "Cart",
+        element: <Cart />,
       },
     ],
   },

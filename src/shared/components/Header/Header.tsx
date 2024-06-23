@@ -1,8 +1,10 @@
 import styles from "./header.module.css";
 import UserIcon from "src/shared/assets/icons/userIcon.svg";
 import cartIcon from "src/shared/assets/icons/cart.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate();
   return (
     <div className={styles.header_wrapper}>
       <div className={styles.header_top}>Get 50% Off on Selected Items</div>
@@ -31,10 +33,12 @@ export default function Header() {
             <img src={UserIcon} alt="" />
             My account
           </div>
-          <div className={styles.cart}>
+          <button className={styles.cart} onClick={() => navigate("cart")}>
+            {" "}
+            {/* will replace this with a btn component */}
             <img src={cartIcon} alt="" />
             Cart
-          </div>
+          </button>
         </div>
       </header>
     </div>
