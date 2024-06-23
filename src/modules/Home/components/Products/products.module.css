@@ -1,0 +1,24 @@
+.productsContainer {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width: 95%;
+}
+
+.productsHeader {
+  border: 1px solid red;
+  padding: 2em;
+}
+
+.productsMain {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  height: max-content;
+}
+
+.productsFooter {
+  border: 1px solid blue;
+  padding: 2em;
+}

@@ -1,6 +1,7 @@
 export interface IAppRouterType {
+    index?: boolean;
     title?:string;
-    path:string;
+    path?:string;
     element:JSX.Element;
     children?:IAppRouterType[];
     isProtected?:boolean;

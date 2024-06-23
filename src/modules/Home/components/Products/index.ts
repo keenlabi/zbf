@@ -1,3 +1,3 @@
-import Product from "./Products"
+import Products from "./Products"
 
-export default Product;
+export default Products;

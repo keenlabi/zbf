@@ -8,7 +8,7 @@ html {
 }
 body {
     background-color: var(--white-color-100);
-    color: var(--dark-blue-accent-200);
+    color: var(--primary-text-color);
     font-weight: var(--font-weight-normal);
 }
 a {

@@ -1,0 +1,54 @@
+.ProductContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.productImage {
+  border-radius: 4px;
+  height: 260px;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.productDetail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+
+.productName {
+  font-size: var(--font-size-18);
+}
+
+.productDescription {
+  font-size: var(--font-size-14);
+  color: var(--secondary-text-color);
+}
+
+.productPrice {
+  position: absolute;
+  right: 0;
+  font-size: var(--font-size-18);
+  display: flex;
+}
+
+.dollarSign {
+  font-size: var(--font-size-12);
+}
+
+.decimals {
+  font-size: var(--font-size-12);
+}
+
+.productCardButton {
+  border: 1px solid var(--dark-blue-accent-200);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-medium);
+  border-radius: 16px;
+  width: 50%;
+  background: transparent;
+  color: var(--tertiary-text-color);
+}

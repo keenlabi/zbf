@@ -12,12 +12,13 @@ const AppRoutes: IAppRouterType[] = [
     element: <Home />,
     children: [
       {
-        path: "home",
+        index: true,
+        path: "",
         title: "Products",
         element: <Product />,
       },
       {
-        path: "details",
+        path: "product-detail/:productId",
         title: "Product details",
         element: <ProductDetail />,
       },
