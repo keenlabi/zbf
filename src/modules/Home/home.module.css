@@ -1,5 +1,12 @@
 .main {
-  height: 700px;
-  padding: 2em 4em;
+  /* height: 700px; */
+  /* padding: 2em 4em; */
+  display: grid;
+  grid-template-columns: 24rem 1fr;
+  grid-template-rows: auto 1fr;
   border: 1px solid green;
+}
+
+.test {
+  border: 1px solid red;
 }
