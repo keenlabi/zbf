@@ -7,8 +7,16 @@
 }
 
 .productsHeader {
-  border: 1px solid red;
-  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-block: 1px solid var(--dark-blue-accent-100);
+}
+
+.productResultCount {
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-normal);
+  color: var(--secondary-text-color);
 }
 
 .productsMain {

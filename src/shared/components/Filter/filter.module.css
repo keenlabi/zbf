@@ -1,0 +1,21 @@
+.filterContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.filterText {
+  font-size: var(--font-size-15);
+  font-weight: var(--font-weight-medium);
+  color: var(--secondary-text-color);
+}
+
+.filterButton {
+  background: none;
+  border: none;
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-medium);
+  color: var(--secondary-text-color);
+  width: max-content;
+}
