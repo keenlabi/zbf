@@ -8,7 +8,11 @@ export default function Products() {
     <div className={styles.productsContainer}>
       <div className={styles.productsHeader}>
         <Filter />
-        <p className={styles.productResultCount}>Showing 1-15 of 200 results</p>
+        {/*
+          please stop using p tags, it's essence to to add extra padding to text
+          which is against the design principles for my styling approach 
+          <p className={styles.productResultCount}>Showing 1-15 of 200 results</p> 
+        */}
       </div>
 
       <main className={styles.productsMain}>
