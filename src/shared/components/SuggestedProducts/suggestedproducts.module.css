@@ -1,0 +1,17 @@
+.suggestedProductsContainer {
+  padding-block: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.suggestedProductsHeading {
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-semibold);
+}
+
+.suggestedProductsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5em;
+}
