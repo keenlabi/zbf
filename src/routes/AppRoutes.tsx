@@ -4,6 +4,10 @@ import { IAppRouterType } from "./routes.types";
 import Home from "src/modules/Home/Home";
 import Product from "src/modules/Home/components/Products";
 import Cart from "src/modules/Home/components/Cart";
+import Checkout from "src/modules/Home/components/Checkout";
+import Payment from "src/modules/Home/components/Payment/Payment";
+import Orders from "src/modules/Home/components/Orders/Orders";
+import Search from "src/modules/Home/components/Search";
 
 const AppRoutes: IAppRouterType[] = [
   ...AuthRoutes,
@@ -27,6 +31,26 @@ const AppRoutes: IAppRouterType[] = [
         path: "cart",
         title: "Cart",
         element: <Cart />,
+      },
+      {
+        path: "checkout",
+        title: "Checkout",
+        element: <Checkout />,
+      },
+      {
+        path: "payment",
+        title: "Payment",
+        element: <Payment />,
+      },
+      {
+        path: "orders",
+        title: "Orders",
+        element: <Orders />,
+      },
+      {
+        path: "search",
+        title: "Search",
+        element: <Search />,
       },
     ],
   },
