@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 5em;
+  width: 97%;
 }
 
 .productDetail {
