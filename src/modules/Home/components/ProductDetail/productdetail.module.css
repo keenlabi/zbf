@@ -12,7 +12,7 @@
 }
 
 .productImages {
-  width: 40%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -37,16 +37,16 @@
 }
 
 .productInfo {
-  width: 60%;
+  width: 55%;
   display: flex;
   flex-direction: column;
-  gap: .5em;
+  gap: 1em;
 }
 
 .productHeader {
   display: flex;
   flex-direction: column;
-  gap: .5em;
+  gap: 1em;
 }
 
 .productDetailHeading {
@@ -75,7 +75,7 @@
 .productDetailColors {
   display: flex;
   flex-direction: column;
-  gap: .4em;
+  gap: .5em;
 }
 
 .colorHeading {
@@ -105,7 +105,7 @@
 .productDetailSizes {
   display: flex;
   flex-direction: column;
-  gap: .4em;
+  gap: .5em;
 }
 
 .sizesHeading {
@@ -134,48 +134,6 @@
 
 .productSize:hover, .productSize:active {
   outline: 1px solid var(--orange-accent-100);
-}
-
-.productQuantity {
-  display: flex;
-  flex-direction: column;
-  gap: .4em;
-}
-
-.productQuantityHeading {
-  font-size: var(--font-size-14);
-  font-weight: var(--font-weight-semibold);
-}
-
-.productQuantityitems {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-}
-
-.quantityControls {
-  border: 1px solid var(--grey-accent-100);
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  width: 200px;
-  border-radius: 50px;
-  background-color: #F0F2F5;
-}
-
-.itemLeft {
-  width: 180px;
-  font-size: var(--font-size-14);
-  font-weight: var(--font-weight-normal);
-}
-
-.orangeText {
-  color: var(--orange-accent-200);
-}
-
-.quantityButton {
-  border: none;
-  background: none;
 }
 
 .productInfoButtonGroup {
