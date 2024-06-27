@@ -8,6 +8,7 @@ import Checkout from "src/modules/Home/components/Checkout";
 import Payment from "src/modules/Home/components/Payment/Payment";
 import Orders from "src/modules/Home/components/Orders/Orders";
 import Search from "src/modules/Home/components/Search";
+import OrderDetail from "src/modules/Home/components/OrderDetail";
 
 const AppRoutes: IAppRouterType[] = [
   ...AuthRoutes,
@@ -24,7 +25,7 @@ const AppRoutes: IAppRouterType[] = [
       },
       {
         path: "product-detail/:productId",
-        title: "Product details",
+        title: "Product detail",
         element: <ProductDetail />,
       },
       {
@@ -51,6 +52,11 @@ const AppRoutes: IAppRouterType[] = [
         path: "search",
         title: "Search",
         element: <Search />,
+      },
+      {
+        path: "order-detail/:orderId",
+        title: "Order detail",
+        element: <OrderDetail />,
       },
     ],
   },

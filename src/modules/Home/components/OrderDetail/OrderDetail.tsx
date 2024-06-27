@@ -1,9 +1,7 @@
 import CartTable from "src/shared/components/CartTable";
-import styles from "./cart.module.css";
+import styles from "./orderdetail.module.css";
 import productImage from "src/shared/assets/images/shoes.png";
-import InputField from "src/shared/components/InputField/InputField";
 import PrimaryTextButton from "src/shared/components/Buttons/TextButton/variants/PrimaryTextButton/PrimaryTextButton";
-import { useNavigate } from "react-router-dom";
 
 const products = [
   {
@@ -44,51 +42,22 @@ const products = [
   },
 ];
 
-export default function Cart() {
-  const navigate = useNavigate();
-
+export default function OrderDetail() {
   return (
-    <div className={styles.cartContainer}>
-      <div className={styles.cartHeader}>
-        <div className={styles.cartHeadings}>
-          <div className={styles.cartHeading}>Cart</div>
-          <button className={styles.orderHistoryButton} onClick={() => navigate("/orders")}>
-            Order History
-          </button>
-        </div>
-        <div className={styles.cartItemCount}>
-          <span className={styles.count}>{2} items</span> in the cart.
-        </div>
-      </div>
+    <div className={styles.orderDetailContainer}>
+      <div className={styles.orderDetailHeading}>Order Detail</div>
 
-      <section className={styles.cartContent}>
+      <section className={styles.orderContent}>
         <CartTable products={products} />
 
-        <div className={styles.checkout}>
-          <div className={styles.address}>
-            <div className={styles.checkoutHeading}>Checkout</div>
-            <InputField onInput={() => {}} placeholder="Address" />
+        <div className={styles.details}>
+          <div className={styles.detailsHeading}>Order Details</div>
 
-            <PrimaryTextButton action={() => {}} label="Update" />
-          </div>
-
-          <div className={styles.coupon}>
-            <div className={styles.checkoutHeading}>Coupon code</div>
-            <InputField onInput={() => {}} placeholder="Coupon" />
-            <div className={styles.couponText}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio doloribus corporis aperiam harum ipsam accusantium tenetur.
-            </div>
-
-            <PrimaryTextButton action={() => {}} label="Apply" />
-          </div>
-
-          <div className={styles.checkoutTotalCard}>
-            <div className={styles.checkoutHeading}>Cart Total</div>
-
+          <div className={styles.detailsCard}>
             <div className={styles.cartTotalItemsList}>
               <div className={styles.cartTotalItem}>
-                <span className={styles.cartTotalItemKey}>Subtotal</span>
-                <span className={styles.cartTotalItemValue}>{123}</span>
+                <span className={styles.cartTotalItemKey}>Status</span>
+                <span className={styles.cartTotalItemValue}>{"Complete"}</span>
               </div>
 
               <div className={styles.cartTotalItem}>
@@ -102,7 +71,7 @@ export default function Cart() {
               </div>
             </div>
 
-            <PrimaryTextButton action={() => {}} label="Checkout" />
+            <PrimaryTextButton action={() => {}} label="ask a question" />
           </div>
         </div>
       </section>

@@ -1,0 +1,11 @@
+.ordersContainer {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.ordersHeading {
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-semibold);
+}
