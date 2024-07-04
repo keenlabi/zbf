@@ -4,35 +4,35 @@ import styles from "./productcard.module.css";
 import IconCart from "src/shared/assets/icons/cart.svg";
 import Image from "src/shared/assets/images/shoes.png";
 
-const productObject = {
-  name: "Nike S43",
-  description:
-    "Praised by the streets for its classic simplicity and comfort, the Nike Blazer Low '77 Vintage returns with its low-profile style and heritage b-ball looks.",
-  image: Image,
-  auxImages: [Image, Image, Image, Image],
-  rating: 5,
-  price: "190.20",
-  colors: ["red", "blue", "yellow", "brown", "green"],
-  sizes: ["37", "38", "39", "41", "42", "43", "44"],
-  itemsLeft: 12,
-};
+interface ProductCardProps {
+  id:string;
+  name:string;
+  description:string;
+  image:string;
+  price:number;
+}
 
-export default function ProductCard() {
+export default function ProductCard(props:ProductCardProps) {
   const navigate = useNavigate();
   return (
-    <div className={styles.ProductContainer} onClick={() => navigate("product-detail/123")}>
+    <div className={styles.ProductContainer} onClick={() => navigate(props.id)}>
       <img className={styles.productImage} src={Image} alt="" />
+     
       <div className={styles.productDetail}>
-        <p className={styles.productName}>{productObject.name}</p>
-        <p className={styles.productDescription}>Product details</p>
-        <p className={styles.productPrice}>
+
+        <div className={styles.productName}>{props.name}</div>
+
+        <div className={styles.productPrice}>
           <span className={styles.dollarSign}>$</span>
-          {productObject.price.split(".")[0]}
-          <span className={styles.decimals}>.{productObject.price.split(".")[1]}</span>
-        </p>
+          {props.price.toString().split(".")[0]}
+        </div>
       </div>
 
-      <IconButton extraStyle={styles.productCardButton} prefixIcon={<img src={IconCart} alt="" />} label="Add to Cart" action={() => {}} />
+      <IconButton 
+        extraStyle={styles.productCardButton} 
+        prefixIcon={<img src={IconCart} alt="" />} 
+        label="Add to Cart" action={() => {}} 
+      />
     </div>
   );
 }

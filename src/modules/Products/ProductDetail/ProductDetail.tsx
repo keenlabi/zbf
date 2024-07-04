@@ -19,7 +19,7 @@ const productObject = {
   itemsLeft: 12,
 };
 
-export default function ProductDetail() {
+export default function ProductDetails() {
   const { name, description, image, auxImages, rating, price, colors, sizes, itemsLeft } = productObject;
 
   return (

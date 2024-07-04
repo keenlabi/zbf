@@ -1,10 +1,10 @@
 export interface INetworkResponse<T> {
-    statusCode:string;
+    statusCode:number;
     message:string;
-    data?:T;
+    data:T;
 }
 
 export interface INetworkResponseData {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    [key:string]:any;
+    [key:string]:string|number|[]|object;
 }

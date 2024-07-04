@@ -1,0 +1,24 @@
+.sidebar_wrapper {
+  border: 1px solid var(--grey-accent-200);
+  height: max-content;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.productCategoriesList {
+
+  >.productCategory {
+    text-transform: capitalize;
+    padding: 10px;
+    font-weight: var(--font-weight-normal);
+    color: var(--grey-accent-500);
+    cursor: pointer;
+  }
+  > .productCategory:hover { 
+    background-color: var(--orange-faded-accent-100);
+    color: var(--orange-accent-500);
+  }
+  >.productCategory._active {
+    background-color: var(--orange-faded-accent-100);
+    color: var(--orange-accent-500);
+  }
+}

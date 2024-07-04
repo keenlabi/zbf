@@ -1,8 +1,8 @@
 import axios from "axios";
 import { INetworkResponse } from "./types";
 
-export function getFetch(url:string, params?:object){
-  return new Promise<INetworkResponse>((resolve, reject) => {
+export function getFetch<T>(url:string, params?:object){
+  return new Promise<INetworkResponse<T>>((resolve, reject) => {
     fetch(url, "GET", params)
     .then((response)=> resolve(response.data))
     .catch((error)=> {
@@ -12,20 +12,20 @@ export function getFetch(url:string, params?:object){
   });
 }
 
-export function postFetch(url:string, body:object) {
-  return new Promise<INetworkResponse>((resolve, reject) => {
+export function postFetch<T>(url:string, body:object) {
+  return new Promise<INetworkResponse<T>>((resolve, reject) => {
     fetch(url, "POST", body)
     .then((response)=> resolve(response.data))
     .catch((error)=> reject(error.response.data));
   });
 }
 
-export function patchFetch(url:string, body:object) {
-    return new Promise((resolve, reject) => {
-      fetch(url, "PATCH", body)
-      .then((response)=> resolve(response.data))
-      .catch((error)=> reject(error));
-    });
+export function patchFetch<T>(url:string, body:object) {
+  return new Promise<INetworkResponse<T>>((resolve, reject) => {
+    fetch(url, "PATCH", body)
+    .then((response)=> resolve(response.data))
+    .catch((error)=> reject(error));
+  });
 }
 
 export function deleteFetch(url:string, body?:object){

@@ -1,7 +1,8 @@
 import styles from "./header.module.css";
 import UserIcon from "src/shared/assets/icons/userIcon.svg";
 import cartIcon from "src/shared/assets/icons/cart.svg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Logo from "../Logo/Logo";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -9,21 +10,12 @@ export default function Header() {
     <div className={styles.header_wrapper}>
       <div className={styles.header_top}>Get 50% Off on Selected Items</div>
       <header>
-        <div className={styles.logo}>Logo</div>
+        <Logo />
 
         <nav>
           <ul>
             <li>
-              <a href="">Product</a>
-            </li>
-            <li>
-              <a href="">Product</a>
-            </li>
-            <li>
-              <a href="">Product</a>
-            </li>
-            <li>
-              <a href="">Product</a>
+              <Link to="/products">Products</Link>
             </li>
           </ul>
         </nav>

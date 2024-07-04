@@ -2,6 +2,7 @@
   width: max-content;
 }
 .text {
+  font-family: var(--Roboto-Slab);
   font-weight: var(--font-weight-extrabold);
   font-size: var(--font-size-24);
   font-style: italic;
