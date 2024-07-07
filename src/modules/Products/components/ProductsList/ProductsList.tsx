@@ -8,7 +8,7 @@ import CircularRingLoader from "src/shared/components/Loaders/CircularRingLoader
 import Pagination from "src/shared/components/Pagination";
 import ProductCard from "src/shared/components/ProductCard";
 import { useProductCategoriesStateValue } from "src/store/products/productCategories/productCategories.atom";
-import { IProduct, useProductsState } from "src/store/products/products.atom";
+import { IProductListItem, useProductsState } from "src/store/products/products.atom";
 
 export default function ProductsList() {
 
@@ -17,7 +17,7 @@ export default function ProductsList() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [networkResponse, setNetworkResponse] = useState<INetworkResponse<{products:IProduct[]}>>();
+  const [networkResponse, setNetworkResponse] = useState<INetworkResponse<{products:IProductListItem[]}>>();
 
   useEffect(()=> {
     setIsLoading(true);

@@ -3,9 +3,15 @@ import { IInitState } from "../types";
 
 export interface IProduct {
     id:string;
+    image:string;
     name:string;
     description:string;
+    inventory:{
+        id:string;
+        quantity:number
+    }
     price:number;
+    categories:string[];
     createdAt:string;
     updatedAt:string;
 }
@@ -23,7 +29,14 @@ export const productInitState:IProductState = {
         price: 0,
         createdAt: "",
         updatedAt: "",
-    }
+        categories: [],
+        inventory: {
+            id: "",
+            quantity: 0
+        },
+        image: ""
+    },
+    message: ""
 }
 
 const productAtom = atom({
@@ -31,6 +44,6 @@ const productAtom = atom({
     default: productInitState
 })
 
-export const useProductsState = ()=> useRecoilState(productAtom);
-export const useProductsStateValue = ()=> useRecoilValue(productAtom);
-export const useSetProductsState = ()=> useSetRecoilState(productAtom);
+export const useProductState = ()=> useRecoilState(productAtom);
+export const useProductStateValue = ()=> useRecoilValue(productAtom);
+export const useSetProductState = ()=> useSetRecoilState(productAtom);

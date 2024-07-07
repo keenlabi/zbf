@@ -1,4 +1,4 @@
-import ProductDetail from "src/modules/Products/ProductDetail";
+import ProductDetails from "src/modules/Products/ProductDetails";
 import { IAppRouterType } from "./routes.types";
 import Products from "src/modules/Products";
 
@@ -12,7 +12,7 @@ const ProductsRoutes:IAppRouterType[] = [
     {
         path: "products/:productId",
         title: "Product",
-        element: <ProductDetail />,
+        element: <ProductDetails />,
     },
 ];
 

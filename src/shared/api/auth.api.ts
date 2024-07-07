@@ -12,6 +12,12 @@ interface IAuthNetworkResponseData {
 }
 type IAuthNetworkResponse = INetworkResponse<IAuthNetworkResponseData>;
 
+// export function FetchAuthAction() {
+//     return new Promise<IAuthNetworkResponse>((resolve, reject) => {
+//         getFetch(()=> {})
+//     })
+// }
+
 // register
 export function RegisterAction(payload:ILoginActionPayload) {
     return new Promise<IAuthNetworkResponse>((resolve, reject)=> {

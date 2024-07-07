@@ -1,7 +1,7 @@
 import { atom, useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { IInitState } from "../types";
 
-export interface IProduct {
+export interface IProductListItem {
     id:string;
     name:string;
     description:string;
@@ -12,7 +12,7 @@ export interface IProduct {
 
 export interface IProductsState extends IInitState {
     products:{
-        list:IProduct[];
+        list:IProductListItem[];
         currentPage:number;
         totalPages:number;
     }
@@ -25,6 +25,7 @@ export const productsInitState:IProductsState = {
         currentPage: 1,
         totalPages: 1
     },
+    message: ""
 }
 
 const productsAtom = atom({

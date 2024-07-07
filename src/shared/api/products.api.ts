@@ -1,7 +1,8 @@
 import { getFetch } from "src/shared/api/fetch"
 import { INetworkResponse } from "./types";
-import { IProduct } from "src/store/products/products.atom";
+import { IProductListItem } from "src/store/products/products.atom";
 import { IProductCategory } from "src/store/products/productCategories/productCategories.atom";
+import { IProduct } from "src/store/products/product.atom";
 
 export function FetchProductCategoriesAction() {
     return new Promise<INetworkResponse<{categories:IProductCategory[]}>>((resolve, reject)=> {
@@ -12,8 +13,8 @@ export function FetchProductCategoriesAction() {
 }
 
 export function FetchProductsByCategoryAction(category:string ,currentPage:number) {
-    return new Promise<INetworkResponse<{products:IProduct[]}>>((resolve, reject)=> {
-        getFetch<{products:IProduct[]}>(`/api/products?category=${category}&page=${currentPage}`)
+    return new Promise<INetworkResponse<{products:IProductListItem[]}>>((resolve, reject)=> {
+        getFetch<{products:IProductListItem[]}>(`/api/products?category=${category}&page=${currentPage}`)
         .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })
@@ -21,7 +22,7 @@ export function FetchProductsByCategoryAction(category:string ,currentPage:numbe
 
 export function FetchProductAction(productId:string) {
     return new Promise<INetworkResponse<{product:IProduct}>>((resolve, reject)=> {
-        getFetch<{product:IProduct}>(`/api/product/${productId}`)
+        getFetch<{product:IProduct}>(`/api/products/${productId}`)
         .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })

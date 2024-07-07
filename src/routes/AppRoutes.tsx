@@ -2,15 +2,18 @@ import AuthRoutes from "./AuthRoutes";
 import { IAppRouterType } from "./routes.types";
 import Home from "src/modules/Home/Home";
 import ProductsRoutes from "./ProductRoutes";
+import ProtectedRoute from "./ProtectedRoute";
+import CartRoutes from "./CartRoutes";
 
 const AppRoutes: IAppRouterType[] = [
   ...AuthRoutes,
   {
     path: "/",
     title: "Home",
-    element: <Home />,
+    element: <ProtectedRoute children={<Home />} />,
     children: [
-      ...ProductsRoutes
+      ...ProductsRoutes,
+      ...CartRoutes
       // {
       //   path: "checkout",
       //   title: "Checkout",

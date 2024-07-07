@@ -80,7 +80,7 @@ export default function useLogin() {
         .then((response)=> {
             setUserState(state => ({ ...state, profile: response.data.user }))
             authenticateUser();
-            navigate("/")
+            navigate("/cart")
         })
         .catch((error)=> createAlert("error", error.message))
         .finally(()=> setUserState(state => ({ ...state, status: "idle" })))

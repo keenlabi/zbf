@@ -14,7 +14,8 @@ export interface IProductCategoriesState extends IInitState {
 export const productCategoriesInitState:IProductCategoriesState = {
     status: "idle",
     categories: [],
-    activeCategory: ""
+    activeCategory: "",
+    message: ""
 }
 
 const productCategoriesAtom = atom({

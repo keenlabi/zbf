@@ -5,5 +5,6 @@ export interface ISelectorData<T> {
 }
 
 export interface IInitState {
-    status:"idle"|"loading";
+    status:"idle"|"loading"|"failed"|"success";
+    message:string;
 }

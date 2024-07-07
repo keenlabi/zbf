@@ -15,7 +15,7 @@
   object-fit: cover;
 }
 
-.productDetail {
+.ProductDetails {
   gap: .5em;
   overflow: hidden;
   height: 70px;
