@@ -1,6 +1,4 @@
-String.prototype.capitalizeFirstCharacter = function (this:string) {
-    if(!this) return this;
-    return this.split(" ")[0].substring(0, 1).toUpperCase() + this.substring(1, this.length);
-};
-
-export {}
+export function capitalizeFirstCharacter (message:string) {
+    if(!message) return message;
+    return message.split(" ")[0].substring(0, 1).toUpperCase() + message.substring(1, message.length);
+}

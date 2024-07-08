@@ -1,7 +1,7 @@
 import { atom, useRecoilState, useRecoilValue } from "recoil";
 import { getRecoil, setRecoil } from "recoil-nexus";
 import { IAlert } from "./types";
-import "src/shared/utility/stringPrototype.ts";
+import { capitalizeFirstCharacter } from "src/shared/utility/stringPrototype.ts";
 
 export const alerts:IAlert[] = [];
 
@@ -15,7 +15,7 @@ export const useAlertStateValue = ()=> useRecoilValue(alertAtom)
 
 export function createAlert(status:"error"|"success", message:string, time?:number) {
     const feedbacks = getRecoil(alertAtom)
-    setRecoil(alertAtom, [{ status, message: message.capitalizeFirstCharacter(), timeOutInSecs: time ?? 5 }, ...feedbacks])
+    setRecoil(alertAtom, [{ status, message: capitalizeFirstCharacter(message), timeOutInSecs: time ?? 5 }, ...feedbacks])
 }
 
 export function removeAlert(feedbackIndex:number) {
