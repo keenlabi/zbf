@@ -16,6 +16,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "http://localhost:7100",
+        // target: "https://shawnx-6d26c8cc075a.herokuapp.com",
         changeOrigin: true,
         secure: false,
       },

@@ -1,0 +1,41 @@
+.productQuantity {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.productQuantityHeading {
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-semibold);
+}
+
+.productQuantityitems {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.quantityControls {
+  border: 1px solid var(--grey-accent-100);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  width: 200px;
+  border-radius: 50px;
+  background-color: #F0F2F5;
+}
+
+.itemLeft {
+  width: 180px;
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-normal);
+}
+
+.orangeText {
+  color: var(--orange-accent-200);
+}
+
+.quantityButton {
+  border: none;
+  background: none;
+}

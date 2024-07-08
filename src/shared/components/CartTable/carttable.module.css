@@ -1,0 +1,101 @@
+.table {
+  border-radius: 7px;
+  overflow: hidden;
+  padding: 1em;
+  border: 1px solid var(--grey-accent-100);
+  height: max-content;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  column-gap: 2rem;
+  align-items: center;
+
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+  padding: 1rem;
+  border-bottom: 1px solid var(--grey-accent-100);
+  margin-bottom: 1em;
+  font-size: var(--font-size-14);
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  column-gap: 2.4em;
+  align-items: center;
+  padding: 1em;
+}
+
+.tableRow:not(:last-child) {
+  border-bottom: 1px solid var(--grey-accent-100);
+}
+
+.tableRowFirst {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.RowName {
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-semibold);
+}
+
+.tableRowSecond {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.tableRowImage {
+  width: 100px;
+}
+
+.tableRowInfo {
+  font-size: var(--font-size-13);
+  font-weight: var(--font-weight-normal);
+  color: var(--tertiary-text-color);
+}
+
+.value {
+  font-weight: var(--font-weight-semibold);
+  color: var(--primary-text-color);
+}
+
+.qtyMod {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  padding: 5px;
+  position: relative;
+
+  > .qtyIcon {
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--orange-accent-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+  }
+
+  > .qtyValue {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-14);
+  }
+}
+._disabled::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.495);
+}

@@ -1,0 +1,32 @@
+.container {
+  width: 100px;
+  padding: 10px 15px;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.success {
+  color: var(--green-accent-900);
+  background: var(--green-accent-faded-100);
+}
+.failed { 
+  background: var(--red-accent-faded-200);
+  color: var(--red-accent-500);
+}
+.pending {
+  background: var(--yellow-accent-faded-100);
+  color: var(--yellow-accent-100);
+}
+.processing {
+  background: var(--blue-accent-faded-900);
+  color: var(--blue-accent-900);
+}
+.confirmed {
+  background: var(--blue-accent-faded-900);
+  color: var(--blue-accent-900);
+}

@@ -7,10 +7,21 @@ export interface ILoginActionPayload {
     password:string;
 }
 
+interface IAuthNetworkResponseData {
+    user:IUserProfile
+}
+type IAuthNetworkResponse = INetworkResponse<IAuthNetworkResponseData>;
+
+// export function FetchAuthAction() {
+//     return new Promise<IAuthNetworkResponse>((resolve, reject) => {
+//         getFetch(()=> {})
+//     })
+// }
+
 // register
 export function RegisterAction(payload:ILoginActionPayload) {
-    return new Promise<INetworkResponse<{user:IUserProfile}>>((resolve, reject)=> {
-        postFetch("/api/auth/register", payload)
+    return new Promise<IAuthNetworkResponse>((resolve, reject)=> {
+        postFetch<IAuthNetworkResponseData>("/api/auth/register", payload)
         .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })
@@ -18,8 +29,8 @@ export function RegisterAction(payload:ILoginActionPayload) {
 
 // login
 export function LoginAction(payload:ILoginActionPayload) {
-    return new Promise<INetworkResponse<{user:IUserProfile}>>((resolve, reject)=> {
-        postFetch("/api/auth/login", payload)
+    return new Promise<IAuthNetworkResponse>((resolve, reject)=> {
+        postFetch<IAuthNetworkResponseData>("/api/auth/login", payload)
         .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })

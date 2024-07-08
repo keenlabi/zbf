@@ -1,6 +1,7 @@
 import { atom, useRecoilState, useRecoilValue } from "recoil";
 import { getRecoil, setRecoil } from "recoil-nexus";
 import { IAlert } from "./types";
+import "src/shared/utility/stringPrototype.ts";
 
 export const alerts:IAlert[] = [];
 

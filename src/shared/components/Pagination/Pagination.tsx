@@ -1,22 +1,78 @@
-import IconButton from "../Buttons/IconButton/IconButton";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import styles from "./pagination.module.css";
-import iconLeft from "src/shared/assets/icons/chevron-left.svg";
-import iconRight from "src/shared/assets/icons/chevron-right.svg";
 
-const pageNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+interface IPaginationProps {
+  currentPage:number;
+  totalPages:number;
+  goToPageAction:(newPage:number)=> void;
+}
 
-export default function Pagination() {
+export default function Pagination(props:IPaginationProps) {
+
+  const paginationArray = [...Array(props.totalPages)];
+
+  function goBack() {
+    return props.currentPage > 1 && props.goToPageAction(--props.currentPage)
+  }
+
+  function goForward() {
+    return props.currentPage < props.totalPages && props.goToPageAction(++props.currentPage!)
+  }
+
   return (
-    <div className={styles.paginationContainer}>
-      <IconButton extraStyle={styles.paginationButton} prefixIcon={<img src={iconLeft} alt="" />} label="Previous" action={() => {}} />
+    <>
+      {
+        props.totalPages
+        ? <div className={styles.paginationContainer}>
+            <FaAngleLeft
+              className={`
+                ${styles.paginationButton} 
+                ${props.currentPage === 1 && styles.inactive}`
+              }
+              onClick={goBack}
+            />
 
-      <div className={styles.pageNumbers}>
-        {pageNumbers.map((pageNumber) => (
-          <IconButton extraStyle={styles.pageNumber} label={pageNumber} action={() => {}} />
-        ))}
-      </div>
+              <div className={styles.pageNumbers}>
+                {
+                  paginationArray.map((_, index) => {
+                    const currentPageNumber = index + 1;
 
-      <IconButton extraStyle={styles.paginationButton} suffixIcon={<img src={iconRight} alt="" />} label="Next" action={() => {}} />
-    </div>
+                    let pageNumber:string|number|null = currentPageNumber;
+
+                    if (currentPageNumber > props.currentPage + 3 && currentPageNumber !== props.totalPages && currentPageNumber !== 1) pageNumber = "...";
+                    if (props.currentPage > currentPageNumber && currentPageNumber! < props.totalPages - 3 && currentPageNumber !== 1) pageNumber = "...";
+
+                    paginationArray[index] = pageNumber;
+
+                    return pageNumber && paginationArray[index] !== paginationArray[index - 1] 
+                    ?	<div
+                        key={"page" + currentPageNumber}
+                        className={`
+                          ${styles.pageNumber}
+                          ${index+1 === props.currentPage && styles.currentPage}
+                        `}
+                        style={parseInt(pageNumber!.toString())
+                          ? { cursor: "pointer" }
+                          : { cursor: "default" }
+                        }
+                        onClick={()=> parseInt(pageNumber!.toString()) && 
+                                      props.goToPageAction(parseInt(pageNumber.toString()))                        }>
+                        {pageNumber}
+                      </div>
+                    : 	null;
+                })}
+              </div>
+
+            <FaAngleRight
+              className={`
+                ${styles.paginationButton} 
+                ${props.currentPage === props.totalPages && styles._inactive}`
+              }
+              onClick={goForward}
+            />
+          </div>
+        : null
+      }
+    </>
   );
 }

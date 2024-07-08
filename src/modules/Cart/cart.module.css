@@ -1,0 +1,133 @@
+.cartContainer {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  min-height: 50vh;
+}
+
+
+.message {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-24);
+}
+
+.cartHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.cartHeadings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderHistoryButton {
+  color: var(--orange-accent-300);
+  background: none;
+  border: 1px solid transparent;
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.orderHistoryButton:hover {
+  border-bottom: 1px solid var(--orange-accent-300);
+}
+
+.cartHeading {
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-semibold);
+}
+
+.cartItemCount {
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-normal);
+}
+
+.count {
+  font-weight: var(--font-weight-bold);
+}
+
+.cartContent {
+  display: flex;
+  gap: 2em;
+}
+
+
+.checkout {
+  width: 40%;
+  padding: 1em;
+  border-radius: 8px;
+  border: 1px solid var(--grey-accent-100);
+  display: grid;
+  gap: 1.5em;
+}
+
+.address {
+  display: grid;
+  gap: 1em;
+}
+
+.checkoutHeading {
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-semibold);
+}
+
+.coupon {
+  display: grid;
+  gap: 1em;
+}
+
+.couponText {
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-normal);
+}
+
+.checkoutTotalCard {
+  display: grid;
+  gap: 1em;
+  padding: 1em;
+  border-radius: 8px;
+  background-color: var(--orange-faded-accent-300);
+}
+
+.cartTotalItemsList {
+  display: grid;
+  gap: .5em;
+}
+
+.cartTotalItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-normal);
+}
+
+.cartTotalItemKey {
+  font-weight: var(--font-weight-normal);
+}
+
+.cartTotalItemValue {
+  font-weight: var(--font-weight-semibold);
+}
+
+.orderSuccess {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  gap: 1rem;
+
+  > .orderSuccessIcon {
+    font-size: 6rem;
+    color: var(--green-accent-900);
+  }
+}
+.orderSuccessMessage {
+  color: var(--secondary-text-color);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-24);
+}
