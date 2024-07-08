@@ -108,7 +108,7 @@ export default function CartTable(props:CartTableProps) {
                       <div>
                         { 
                           formatCurrency({
-                            amount: (item.product.price * item.quantity) ?? 0,
+                            amount: (item.product.price * item.quantity),
                             sigFigures: 2
                           })
                         }

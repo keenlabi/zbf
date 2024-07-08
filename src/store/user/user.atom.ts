@@ -19,7 +19,8 @@ export const userInitState:IUserState = {
         email: "",
         createdAt: "",
         updatedAt: ""
-    }
+    },
+    message: ""
 }
 
 const userAtom = atom({

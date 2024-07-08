@@ -1,46 +1,8 @@
-import CartTable from "src/shared/components/CartTable";
+// import CartTable from "src/shared/components/CartTable";
 import styles from "./orderdetail.module.css";
-import productImage from "src/shared/assets/images/shoes.png";
+// import productImage from "src/shared/assets/images/shoes.png";
 import PrimaryTextButton from "src/shared/components/Buttons/TextButton/variants/PrimaryTextButton/PrimaryTextButton";
 
-const products = [
-  {
-    name: "Nike S43",
-    description:
-      "Praised by the streets for its classic simplicity and comfort, the Nike Blazer Low '77 Vintage returns with its low-profile style and heritage b-ball looks.",
-    image: productImage,
-    auxImages: [productImage, productImage, productImage, productImage],
-    rating: 5,
-    price: 190.2,
-    colors: ["red", "blue", "yellow", "brown", "green"],
-    sizes: ["37", "38", "39", "41", "42", "43", "44"],
-    itemsLeft: 12,
-  },
-  {
-    name: "Adidas S43",
-    description:
-      "Praised by the streets for its classic simplicity and comfort, the Nike Blazer Low '77 Vintage returns with its low-profile style and heritage b-ball looks.",
-    image: productImage,
-    auxImages: [productImage, productImage, productImage, productImage],
-    rating: 5,
-    price: 190.2,
-    colors: ["red", "blue", "yellow", "brown", "green"],
-    sizes: ["37", "38", "39", "41", "42", "43", "44"],
-    itemsLeft: 12,
-  },
-  {
-    name: "Adidas S43",
-    description:
-      "Praised by the streets for its classic simplicity and comfort, the Nike Blazer Low '77 Vintage returns with its low-profile style and heritage b-ball looks.",
-    image: productImage,
-    auxImages: [productImage, productImage, productImage, productImage],
-    rating: 5,
-    price: 190.2,
-    colors: ["red", "blue", "yellow", "brown", "green"],
-    sizes: ["37", "38", "39", "41", "42", "43", "44"],
-    itemsLeft: 12,
-  },
-];
 
 export default function OrderDetail() {
   return (
@@ -48,7 +10,7 @@ export default function OrderDetail() {
       <div className={styles.orderDetailHeading}>Order Detail</div>
 
       <section className={styles.orderContent}>
-        <CartTable products={products} />
+        {/* <CartTable products={products} /> */}
 
         <div className={styles.details}>
           <div className={styles.detailsHeading}>Order Details</div>

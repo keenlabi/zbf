@@ -7,7 +7,8 @@ export interface IAuth extends IInitState {
 
 export const authInitState:IAuth = {
     isAuthenticated: false,
-    status: "idle"
+    status: "idle",
+    message: ""
 }
 
 const authAtom = atom({
