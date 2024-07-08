@@ -1,36 +1,24 @@
 import { atom, useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { IInitState } from "../types";
 
-export interface IOrdersItemProduct {
-    id:string;
-    name:string;
-    image:string;
-    description:string;
-    price:number;
-}
+export type IOrderStatus = "PENDING"|"PROCESSING"|"SHIPPING"|"DELIVERED";
 
-export interface IOrdersItem {
+export interface IOrderItem {
     id:string;
-    product:IOrdersItemProduct;
-    quantity:number;
-}
-
-export interface IOrders {
-    id:string;
-    items:IOrdersItem[];
+    status:IOrderStatus;
+    itemCount:number;
+    total:number;
+    createdAt:string;
 }
 
 export interface IOrdersState extends IInitState {
-    orders:IOrders;
+    orders:IOrderItem[];
 }
 
 export const ordersInitState:IOrdersState = {
     status: "idle",
-    orders: {
-        id: "",
-        items: []
-    },
-    message: ""
+    message: "",
+    orders: []
 }
 
 const ordersAtom = atom({

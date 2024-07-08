@@ -1,11 +1,13 @@
 import styles from "./header.module.css";
-import cartIcon from "src/shared/assets/icons/cart.svg";
+
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../Logo/Logo";
 import PrimaryTextButton from "../Buttons/TextButton/variants/PrimaryTextButton/PrimaryTextButton";
 import { useAuthStateValue } from "src/store/auth/auth.atom";
+import CartNav from "../CartNav";
 
 export default function Header() {
+
   const navigate = useNavigate();
   const authState = useAuthStateValue();
 
@@ -19,6 +21,12 @@ export default function Header() {
                 <li>
                   <Link to="/products">Products</Link>
                 </li>
+                {
+                  authState.isAuthenticated &&
+                  <li>
+                    <Link to="/orders">Orders</Link>
+                  </li>
+                }
               </ul>
             </nav>
 
@@ -34,10 +42,7 @@ export default function Header() {
 
               {
                 authState.isAuthenticated &&
-                <button className={styles.cart} onClick={() => navigate("cart")}>
-                  <img src={cartIcon} alt="" />
-                  Cart
-                </button>
+                <CartNav />
               }
             </div>
           </header>

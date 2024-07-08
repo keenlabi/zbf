@@ -1,0 +1,12 @@
+.page_section {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.error_message {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-24);
+}

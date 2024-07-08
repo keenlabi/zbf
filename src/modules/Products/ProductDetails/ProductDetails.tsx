@@ -72,7 +72,7 @@ export default function ProductDetails() {
     .then((networkResponse)=> {
       setCartState(state => ({
         ...state,
-        items: networkResponse.data.cart
+        cart: networkResponse.data.cart
       }))
       createAlert("success", networkResponse.message);
     })

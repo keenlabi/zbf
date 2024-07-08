@@ -1,36 +1,37 @@
-import OrdersTable from "src/shared/components/OrdersTable";
+import OrdersTable from "src/modules/Orders/components/OrdersTable";
 import styles from "./orders.module.css";
-
-const date = new Date();
-console.log(date.toDateString());
-
-const OrdersList = [
-  {
-    orderID: "123ABD",
-    date: date.toDateString(),
-    status: "pending",
-    totalPrice: 104,
-  },
-  {
-    orderID: "345DEF",
-    date: date.toDateString(),
-    status: "complete",
-    totalPrice: 104,
-  },
-  {
-    orderID: "432LFG",
-    date: date.toDateString(),
-    status: "complete",
-    totalPrice: 104,
-  },
-];
+import { useEffect, useState } from "react";
+import { FetchOrdersAction } from "src/shared/api/orders.api";
+import { useOrdersState } from "src/store/orders/orders.atom";
+import ComponentLoader from "src/shared/components/Loaders/ComponentLoader";
 
 export default function Orders() {
+
+  const [ordersState, setOrdersState] = useOrdersState();
+  const [fetchOrdersState, setFetchOrdersState] = useState(ordersState);
+
+  useEffect(()=> {
+    setFetchOrdersState(state => ({ ...state, status:"loading" }));
+
+    FetchOrdersAction()
+    .then((response)=> {
+      setOrdersState(state => ({ ...state, orders: response.data.orders }));
+      setFetchOrdersState(state => ({ ...state, status:"success" }));
+    })
+    .catch(()=> setFetchOrdersState(state=> ({ ...state, status: "failed" })))
+
+  }, [setOrdersState])
+
   return (
     <div className={styles.ordersContainer}>
-      <div className={styles.ordersHeading}>Orders</div>
-
-      <OrdersTable orders={OrdersList} />
+      {
+        fetchOrdersState.status === "loading"
+        ? <ComponentLoader />
+        : <>
+            <div className={styles.ordersHeading}>Orders</div>
+            <OrdersTable orders={ordersState.orders} />
+          </>
+      }
     </div>
   );
 }

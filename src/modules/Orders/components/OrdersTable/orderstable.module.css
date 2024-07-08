@@ -9,7 +9,7 @@
 .tableHeader {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  column-gap: 2rem;
+  column-gap: 1rem;
   align-items: center;
 
   text-transform: uppercase;
@@ -21,21 +21,29 @@
   font-size: var(--font-size-14);
 }
 
+.tableBody {
+  
+}
+
 .tableRow {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  column-gap: 2.4em;
+  column-gap: 1rem;
   align-items: center;
   padding: 1em;
 }
 
-.tableRow:not(:last-child) {
-  border-bottom: 1px solid var(--grey-accent-100);
-}
-
-.tableRowItem {
+.tableCell {
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-normal);
+  overflow: hidden;
+}
+
+.orderId {
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-20);
+  text-overflow: ellipsis;
+  padding-right: 10px;
 }
 
 #action {

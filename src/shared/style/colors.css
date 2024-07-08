@@ -36,6 +36,9 @@
 
     --green-accent-900: #118133;
 
+    --yellow-accent-100: rgb(243, 178, 121);
+    --yellow-accent-faded-100: rgb(249, 244, 233);
+
     --error-color: red;
 
     --primary-text-color: #101928;

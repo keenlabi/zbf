@@ -4,6 +4,8 @@ import Home from "src/modules/Home/Home";
 import ProductsRoutes from "./ProductRoutes";
 import ProtectedRoute from "./ProtectedRoute";
 import CartRoutes from "./CartRoutes";
+import OrderRoutes from "./OrdersRoutes";
+import PageNotFound from "src/modules/PageNotFound";
 
 const AppRoutes: IAppRouterType[] = [
   ...AuthRoutes,
@@ -13,29 +15,15 @@ const AppRoutes: IAppRouterType[] = [
     element: <ProtectedRoute children={<Home />} />,
     children: [
       ...ProductsRoutes,
-      ...CartRoutes
-      // {
-      //   path: "checkout",
-      //   title: "Checkout",
-      //   element: <Checkout />,
-      // },
-      // {
-      //   path: "orders",
-      //   title: "Orders",
-      //   element: <Orders />,
-      // },
-      // {
-      //   path: "search",
-      //   title: "Search",
-      //   element: <Search />,
-      // },
-      // {
-      //   path: "order-detail/:orderId",
-      //   title: "Order detail",
-      //   element: <OrderDetail />,
-      // },
+      ...CartRoutes,
+      ...OrderRoutes
     ],
   },
+  {
+    path: "*",
+    title: "PageNotFound",
+    element:  <ProtectedRoute children={<PageNotFound />} />,
+  }
 ];
 
 export default AppRoutes;
