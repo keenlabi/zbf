@@ -75,7 +75,8 @@ export default function useLogin() {
 
     function handleLogin() {
         if(!loginForm.submittable) return;
-        
+        setUserState(state => ({ ...state, status: "loading" }))
+
         LoginAction({ email: emailModel.value, password: passwordModel.value })
         .then((response)=> {
             setUserState(state => ({ ...state, profile: response.data.user }))

@@ -17,7 +17,8 @@ export default function Login() {
     passwordModel,
     handleModelChange,
     isFormSubmittable,
-    handleLogin
+    handleLogin,
+    isSubmitLoading
 
   } = useLogin();
 
@@ -56,6 +57,7 @@ export default function Login() {
             action={handleLogin} 
             label="Log into Account" 
             disabled={!isFormSubmittable}
+            isLoading={isSubmitLoading}
           />
         </FormWrapper>
 
