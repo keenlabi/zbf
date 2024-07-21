@@ -21,4 +21,6 @@ a._orange {
 }
 img {
     display: block;
+    height: 100%;
+    width: auto;
 }

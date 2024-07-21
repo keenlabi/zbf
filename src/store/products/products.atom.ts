@@ -3,6 +3,7 @@ import { IInitState } from "../types";
 
 export interface IProductListItem {
     id:string;
+    image:string;
     name:string;
     description:string;
     price:number;

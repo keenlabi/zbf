@@ -62,7 +62,6 @@ export default function useLogin() {
             setModel: setModelMatch, 
             validateModel
         });
-        
         validateForm()
     }
     
@@ -77,7 +76,7 @@ export default function useLogin() {
         if(!loginForm.submittable) return;
         setUserState(state => ({ ...state, status: "loading" }))
 
-        LoginAction({ email: emailModel.value, password: passwordModel.value })
+        LoginAction({ email: emailModel.value!, password: passwordModel.value! })
         .then((response)=> {
             setUserState(state => ({ ...state, profile: response.data.user }))
             authenticateUser();

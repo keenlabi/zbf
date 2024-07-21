@@ -1,0 +1,33 @@
+.addCategoryBtn {
+    border: 1px solid var(--dark-blue-accent-400);
+    background: var(--dark-blue-accent-400);
+    color: white;
+    padding: 5px;
+    width: max-content;
+    border-radius: 10px;
+    font-size: var(--font-size-12);
+
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    
+    cursor: pointer;
+}
+
+.category {
+    background-color: var(--dark-blue-accent-100);
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-medium);
+    padding: 10px;
+    width: max-content;
+    border-radius: 10px;
+}
+.sectionLabel {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-15);
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,0 +1,17 @@
+.row_container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.row_container > div {
+  flex-grow: 1;
+}
+.align_top {
+  align-items: flex-start;
+}
+.align_center {
+  align-items: center;
+}
+.align_bottom {
+  align-items: flex-end;
+}

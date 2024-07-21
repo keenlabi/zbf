@@ -1,10 +1,9 @@
 import Orders from "src/modules/Orders/Orders";
-import { IAppRouterType } from "./routes.types";
+import { RouteObject } from "react-router-dom";
 
-const OrderRoutes:IAppRouterType[] = [
+const OrderRoutes:RouteObject[] = [
     {
         path: "/orders",
-        title: "Orders",
         element: <Orders />
     },
 ];

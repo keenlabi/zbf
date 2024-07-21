@@ -8,14 +8,7 @@ function App() {
     {
       element: <AppLayout />,
       errorElement: <Error />,
-      children: AppRoutes.map((appRoute) => ({
-        path: appRoute.path,
-        element: appRoute.element,
-        children: appRoute.children?.map((childRoute) => ({
-          path: childRoute.path,
-          element: childRoute.element,
-        })),
-      })),
+      children: AppRoutes
     },
   ]);
 

@@ -1,11 +1,10 @@
 import Cart from "src/modules/Cart";
-import { IAppRouterType } from "./routes.types";
 import ProtectedRoute from "./ProtectedRoute";
+import { RouteObject } from "react-router-dom";
 
-const CartRoutes:IAppRouterType[] = [
+const CartRoutes:RouteObject[] = [
     {
         path: "cart",
-        title: "Cart",
         element:    <ProtectedRoute 
                         children={<Cart />} 
                         authRequired={true} 

@@ -4,7 +4,7 @@ import { ICart } from "src/store/cart/cart.atom";
 
 export function IncreaseCartItemQuantityAction(itemId:string) {
     return new Promise<INetworkResponse<{cart:ICart}>>((resolve, reject)=> {
-        patchFetch<{cart:ICart}>(`/api/cart/item/${itemId}/quantity/increase`, {})
+        patchFetch<{cart:ICart}>(`/cart/item/${itemId}/quantity/increase`, {})
         .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })
@@ -12,7 +12,7 @@ export function IncreaseCartItemQuantityAction(itemId:string) {
 
 export function DecreaseCartItemQuantityAction(itemId:string) {
     return new Promise<INetworkResponse<{cart:ICart}>>((resolve, reject)=> {
-        patchFetch<{cart:ICart}>(`/api/cart/item/${itemId}/quantity/decrease`, {})
+        patchFetch<{cart:ICart}>(`/cart/item/${itemId}/quantity/decrease`, {})
         .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })
@@ -20,7 +20,7 @@ export function DecreaseCartItemQuantityAction(itemId:string) {
 
 export function FetchCartAction() {
     return new Promise<INetworkResponse<{cart:ICart}>>((resolve, reject)=> {
-        getFetch<{cart:ICart}>(`/api/cart`)
+        getFetch<{cart:ICart}>(`/cart`)
         .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })
@@ -28,7 +28,7 @@ export function FetchCartAction() {
 
 export function AddToCartAction(productId:string) {
     return new Promise<INetworkResponse<{cart:ICart}>>((resolve, reject)=> {
-        postFetch<{cart:ICart}>(`/api/cart/${productId}`, {})
+        postFetch<{cart:ICart}>(`/cart/${productId}`, {})
         .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })

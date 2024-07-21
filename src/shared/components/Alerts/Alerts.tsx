@@ -11,7 +11,6 @@ export default function Alerts() {
         <div className={styles.feedback_list_container}>
             {
                 alerts.map((feedback, index) => {
-                    console.log(feedback)
                     return feedback.status === "error"
                     ?   <ErrorFeedback
                             key={index} 

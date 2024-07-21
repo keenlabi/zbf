@@ -1,0 +1,40 @@
+.shopSection {
+  --sectionPadding: 5%;
+  --shopNavSideBarWidth: 200px;
+  padding: var(--sectionPadding);
+}
+
+.shopWrapper {
+  display: flex;
+  gap: 1rem;
+}
+.shopNavSideBar {
+  border: 1px solid var(--grey-accent-200);
+  height: max-content;
+  width: var(--shopNavSideBarWidth);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  >.shopNavItem {
+    text-transform: capitalize;
+    font-weight: var(--font-weight-normal);
+    color: var(--grey-accent-500);
+    cursor: pointer;
+    padding: 15px;
+  }
+  > .shopNavItem:hover { 
+    background-color: var(--orange-faded-accent-100);
+    color: var(--orange-accent-500);
+  }
+  >.shopNavItem._active {
+    background-color: var(--orange-faded-accent-100);
+    color: var(--orange-accent-500);
+  }
+}
+
+.outlet {
+  padding: 0 5%;
+  width: calc(100%  - var(--shopNavSideBarWidth));
+}

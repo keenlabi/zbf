@@ -1,17 +1,14 @@
 import ProductDetails from "src/modules/Products/ProductDetails";
-import { IAppRouterType } from "./routes.types";
 import Products from "src/modules/Products";
+import { RouteObject } from "react-router-dom";
 
-const ProductsRoutes:IAppRouterType[] = [
+const ProductsRoutes:RouteObject[] = [
     {
-        index: true,
         path: "products",
-        title: "Products",
         element: <Products />,
     },
     {
         path: "products/:productId",
-        title: "Product",
         element: <ProductDetails />,
     },
 ];

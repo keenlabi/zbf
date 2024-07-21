@@ -1,0 +1,33 @@
+.imagePicker {
+    border: 1px solid var(--dark-blue-accent-200);
+    border-style: dashed;
+    border-width: 2px;
+    height: 150px;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+.label {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-15);
+}
+.imagePlaceholder {
+    height: 100px;
+    color: var(--dark-blue-accent-200);
+    cursor: pointer;
+}
+.selectedImage {
+    height: 150px;
+    object-fit: contain;
+}
+.text {
+    font-weight: var(--font-weight-medium);
+    color: var(--dark-blue-accent-200);
+    cursor: pointer;
+}

@@ -60,7 +60,7 @@ export default function ProductsList() {
                             id={product.id} 
                             name={product.name} 
                             description={product.description} 
-                            image={""}
+                            image={product.image}
                             price={product.price ?? "500"}
                           />
                 })

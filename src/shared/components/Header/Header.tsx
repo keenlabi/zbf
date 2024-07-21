@@ -27,6 +27,12 @@ export default function Header() {
                     <Link to="/orders">Orders</Link>
                   </li>
                 }
+                {
+                  authState.isAuthenticated &&
+                  <li>
+                    <Link to="/shop">Shop</Link>
+                  </li>
+                }
               </ul>
             </nav>
 

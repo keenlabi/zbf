@@ -1,5 +1,5 @@
-.success_feedback {
-    background: var(--green-accent-900);
+.success_alert {
+    background: var(--green-accent-100);
     color: white;
     width: 300px;
     padding: 20px;

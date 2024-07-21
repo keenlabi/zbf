@@ -5,7 +5,7 @@ import { useState } from "react";
 import SizedBox from "../SizedBox";
 
 export interface IInputFieldModel {
-  type?:"text"|"password"|"number"|"email";
+  type?:"text"|"password"|"number"|"email"|"file";
   label?:string;
   error?:string;
   disabled?:boolean;
@@ -17,7 +17,7 @@ export interface IInputFieldModel {
 }
 
 export interface IInputFieldProps {
-  type?:"text"|"password"|"number"|"email";
+  type?:"text"|"password"|"number"|"email"|"file";
   label?:string;
   name?:string;
   error?:string;

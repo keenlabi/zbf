@@ -21,7 +21,7 @@ type IAuthNetworkResponse = INetworkResponse<IAuthNetworkResponseData>;
 // register
 export function RegisterAction(payload:ILoginActionPayload) {
     return new Promise<IAuthNetworkResponse>((resolve, reject)=> {
-        postFetch<IAuthNetworkResponseData>("/api/auth/register", payload)
+        postFetch<IAuthNetworkResponseData>("/auth/register", payload)
         .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })
@@ -30,7 +30,7 @@ export function RegisterAction(payload:ILoginActionPayload) {
 // login
 export function LoginAction(payload:ILoginActionPayload) {
     return new Promise<IAuthNetworkResponse>((resolve, reject)=> {
-        postFetch<IAuthNetworkResponseData>("/api/auth/login", payload)
+        postFetch<IAuthNetworkResponseData>("/auth/login", payload)
         .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })

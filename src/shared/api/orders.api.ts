@@ -5,7 +5,7 @@ import { IOrderItem } from "src/store/orders/orders.atom";
 
 export function FetchOrdersAction() {
     return new Promise<INetworkResponse<{orders:IOrderItem[]}>>((resolve, reject)=> {
-        getFetch<{orders:IOrderItem[]}>(`/api/orders`)
+        getFetch<{orders:IOrderItem[]}>(`/orders`)
         .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })
@@ -18,7 +18,7 @@ interface ICreateOrder {
 
 export function CreateOrderAction(payload:ICreateOrder) {
     return new Promise<INetworkResponse<{cart:ICart}>>((resolve, reject)=> {
-        postFetch<{cart:ICart}>(`/api/orders`,payload)
+        postFetch<{cart:ICart}>(`/orders`,payload)
         .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })

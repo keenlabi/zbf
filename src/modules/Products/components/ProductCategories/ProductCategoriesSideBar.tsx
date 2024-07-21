@@ -1,5 +1,5 @@
-import CircularRingLoader from "src/shared/components/Loaders/CircularRingLoader";
 import styles from "./productcategoriessidebar.module.css";
+import CircularRingLoader from "src/shared/components/Loaders/CircularRingLoader";
 import { useEffect, useState } from "react";
 import { FetchProductCategoriesAction } from "src/shared/api/products.api";
 import { INetworkResponse } from "src/shared/api/types";
