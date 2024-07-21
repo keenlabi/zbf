@@ -2,6 +2,7 @@ import Shop from "src/modules/Shop/Shop";
 import { RouteObject } from "react-router-dom";
 import AddProduct from "src/modules/Shop/Products/AddProduct";
 import ProtectedRoute from "./ProtectedRoute";
+import CustomersList from "src/modules/Shop/Customers/CustomersList/CustomersList";
 
 const ShopRoutes:RouteObject[] = [
     {
@@ -22,7 +23,7 @@ const ShopRoutes:RouteObject[] = [
             },
             {
                 path: "customers",
-                element: <AddProduct />
+                element: <CustomersList />
             }
         ]
     },
