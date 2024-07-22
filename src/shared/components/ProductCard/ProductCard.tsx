@@ -4,7 +4,6 @@ import styles from "./productcard.module.css";
 // import IconCart from "src/shared/assets/icons/cart.svg";
 import Image from "src/shared/assets/images/shoes.png";
 import formatCurrency from "src/shared/utility/formatCurrency";
-import CloudImage from "../CloudImage";
 // import { useAuthStateValue } from "src/store/auth/auth.atom";
 
 interface ProductCardProps {
@@ -20,9 +19,8 @@ export default function ProductCard(props:ProductCardProps) {
   // const authState = useAuthStateValue();
 
   return (
-    <div className={styles.ProductContainer} onClick={() => navigate(props.id)}>
-      
-      <img className={styles.productImage} src={props.image} alt="" />
+    <div className={styles.ProductContainer} onClick={() => navigate(`/products/${props.id}`)}>
+      <img className={styles.productImage} src={Image} alt="" />
      
       <div className={styles.ProductDetails}>
 

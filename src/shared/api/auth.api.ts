@@ -1,4 +1,4 @@
-import { postFetch } from "src/shared/api/fetch"
+import { patchFetch, postFetch } from "src/shared/api/fetch"
 import { INetworkResponse } from "./types";
 import { IUserProfile } from "src/store/user/user.atom";
 
@@ -34,4 +34,12 @@ export function LoginAction(payload:ILoginActionPayload) {
         .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })
+}
+
+export function LogoutAction() {
+    return new Promise<void>((resolve, reject)=> {
+        return patchFetch<void>('/auth/logout', {})
+        .then(()=> resolve())
+        .catch((error)=> reject(error))
+    });
 }

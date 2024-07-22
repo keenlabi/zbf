@@ -4,6 +4,7 @@ import { IInitState } from "../types";
 export interface IUserProfile {
     id:string;
     email:string;
+    role:"customer"|"admin";
     createdAt:string;
     updatedAt:string;
 }
@@ -17,6 +18,7 @@ export const userInitState:IUserState = {
     profile: {
         id: "",
         email: "",
+        role: "customer",
         createdAt: "",
         updatedAt: ""
     },

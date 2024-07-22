@@ -1,0 +1,33 @@
+.container {
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  border: 1px solid;
+}
+
+.delivered {
+  color: var(--green-accent-900);
+  background: var(--green-accent-faded-100);
+}
+.failed { 
+  background: var(--red-accent-faded-200);
+  color: var(--red-accent-500);
+}
+.shipping {
+  background: var(--orange-faded-accent-100);
+  color: var(--orange-accent-100);
+}
+.processing {
+  background: var(--blue-accent-faded-900);
+  color: var(--blue-accent-900);
+}
+.pending {
+  background: var(--yellow-accent-faded-100);
+  color: var(--yellow-accent-100);
+}
+  

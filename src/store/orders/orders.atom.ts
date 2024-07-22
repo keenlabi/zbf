@@ -12,13 +12,17 @@ export interface IOrderItem {
 }
 
 export interface IOrdersState extends IInitState {
-    orders:IOrderItem[];
+    list:IOrderItem[];
+    currentPage:number;
+    totalPages:number;
 }
 
 export const ordersInitState:IOrdersState = {
     status: "idle",
     message: "",
-    orders: []
+    list: [],
+    currentPage: 0,
+    totalPages: 0
 }
 
 const ordersAtom = atom({

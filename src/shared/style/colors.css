@@ -34,10 +34,18 @@
     --orange-accent-400: #EB5017;
     --orange-accent-500: #CC400C;
 
+    /* GREEN COLORS */
     --green-accent-900: #118133;
 
-    --yellow-accent-100: rgb(243, 178, 121);
-    --yellow-accent-faded-100: rgb(249, 244, 233);
+    --green-accent-faded-100: rgba(232, 255, 232, 1);
+
+    /* YELLOW COLORS  */
+    --yellow-accent-100: #f3b279;
+    --yellow-accent-faded-100: #f9f4e9;
+
+    /* BLUE COLORS */
+    --blue-accent-faded-900: #153df240;
+    --blue-accent-900: #045898;
 
     --error-color: red;
 

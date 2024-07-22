@@ -143,7 +143,7 @@ export default function Cart() {
             <div className={styles.orderSuccessMessage}>Order placed successfully</div>
             <SizedBox height="10px" />
             <PrimaryTextButton
-              extrastyle={styles.orderSuccessButton}
+              extraStyle={styles.orderSuccessButton}
               label="Continue shopping"
               action={()=>  navigate("/products")}
             />

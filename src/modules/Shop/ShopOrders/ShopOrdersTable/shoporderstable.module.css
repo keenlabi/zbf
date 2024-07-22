@@ -1,6 +1,6 @@
 .table {
   border-radius: 7px;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 1em;
   border: 1px solid var(--grey-accent-100);
   height: max-content;
@@ -36,7 +36,7 @@
 .tableCell {
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-normal);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .orderId {

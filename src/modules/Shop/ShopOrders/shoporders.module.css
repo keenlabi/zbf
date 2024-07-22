@@ -1,0 +1,12 @@
+.shopOrdersContainer {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  min-height: 60vh;
+}
+
+.shopOrdersHeading {
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-semibold);
+}

@@ -3,9 +3,15 @@ import { INetworkResponse } from "./types";
 import { ICart } from "src/store/cart/cart.atom";
 import { IOrderItem } from "src/store/orders/orders.atom";
 
+interface IFetchOrdersNetworkResposne {
+    list:IOrderItem[];
+    currentPage:number;
+    totalPages:number;
+}
+
 export function FetchOrdersAction() {
-    return new Promise<INetworkResponse<{orders:IOrderItem[]}>>((resolve, reject)=> {
-        getFetch<{orders:IOrderItem[]}>(`/orders`)
+    return new Promise<INetworkResponse<IFetchOrdersNetworkResposne>>((resolve, reject)=> {
+        getFetch<IFetchOrdersNetworkResposne>(`/orders`)
         .then((response)=> resolve(response))
         .catch((error)=> reject(error))
     })

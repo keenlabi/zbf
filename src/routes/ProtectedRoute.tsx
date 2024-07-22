@@ -3,18 +3,20 @@ import { useEffect, useState } from "react";
 import PageLoader from "../shared/components/Loaders/PageLoader";
 import { FetchUserProfileAction } from "../shared/api/user.api";
 import { authInitState, useSetAuthState } from "../store/auth/auth.atom";
-import { useSetUserState, userInitState } from "../store/user/user.atom";
+import { useUserState, userInitState } from "../store/user/user.atom";
+import PageNotFound from "src/modules/PageNotFound";
 
 interface IProtectedRouteProps {
   children:JSX.Element;
   authRequired?:boolean;
+  allowedRoles?:string[]
 }
 export default function ProtectedRoute(props:IProtectedRouteProps) {
 
   const navigate = useNavigate();
 
   const setAuthState = useSetAuthState();
-  const setUserState = useSetUserState();
+  const [userState, setUserState] = useUserState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -34,5 +36,6 @@ export default function ProtectedRoute(props:IProtectedRouteProps) {
   }, [navigate, props.authRequired, setAuthState, setUserState]);
 
   if (isLoading) return <PageLoader />;
-  else return props.children;
+  if(props.allowedRoles && !props.allowedRoles?.includes(userState.profile.role)) return <PageNotFound />
+  return props.children;
 }

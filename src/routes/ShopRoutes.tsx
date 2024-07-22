@@ -3,11 +3,12 @@ import { RouteObject } from "react-router-dom";
 import AddProduct from "src/modules/Shop/Products/AddProduct";
 import ProtectedRoute from "./ProtectedRoute";
 import CustomersList from "src/modules/Shop/Customers/CustomersList/CustomersList";
+import ShopOrders from "src/modules/Shop/ShopOrders/ShopOrders";
 
 const ShopRoutes:RouteObject[] = [
     {
         path: "shop",
-        element: <ProtectedRoute children={<Shop />} authRequired={true} />,
+        element: <ProtectedRoute children={<Shop />} authRequired={true} allowedRoles={["admin"]} />,
         children: [
             {
                 path: "",
@@ -19,7 +20,7 @@ const ShopRoutes:RouteObject[] = [
             },
             {
                 path: "orders",
-                element: <AddProduct />
+                element: <ShopOrders />
             },
             {
                 path: "customers",

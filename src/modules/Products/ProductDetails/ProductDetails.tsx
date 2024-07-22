@@ -89,10 +89,10 @@ export default function ProductDetails() {
         ? <CircularRingLoader color="var(--orange-accent-200)" />
         : <section className={styles.ProductDetails}>
           <div className={styles.productImages}>
-            <img className={styles.mainImage} src={productObject.image} alt="" />
+            <img className={styles.mainImage} src={productState.product.image} alt="" />
 
             <div className={styles.auxilliaryImageGroup}>
-              <img className={styles.auxilliaryImage} src={productObject.auxImages[0]} alt="" />
+              {/* <img className={styles.auxilliaryImage} src={productObject.auxImages[0]} alt="" /> */}
             </div>
           </div>
 

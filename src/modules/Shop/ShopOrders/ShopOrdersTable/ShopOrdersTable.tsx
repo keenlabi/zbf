@@ -1,10 +1,10 @@
-import styles from "./orderstable.module.css";
+import styles from "./shoporderstable.module.css";
 import { determineTimeLapsed } from "src/shared/utility/dateTime.utility";
-import OrderStatusPill from "../OrderStatusPill/OrderStatusPill";
 import { IOrderStatus } from "src/store/orders/orders.atom";
 import formatCurrency from "src/shared/utility/formatCurrency";
+import OrderStatusModifier from "./components/OrderStatusModifier/OrderStatusModifier";
 
-interface IOrderTableProps {
+interface IShopOrderTableProps {
   orders:{
     id:string;
     itemCount:number;
@@ -14,7 +14,7 @@ interface IOrderTableProps {
   }[]
 }
 
-export default function OrdersTable(props:IOrderTableProps) {
+export default function ShopOrdersTable(props:IShopOrderTableProps) {
   return (
     <div className={styles.table}>
       <div className={styles.tableHeader}>
@@ -31,7 +31,10 @@ export default function OrdersTable(props:IOrderTableProps) {
                       <div className={`${styles.tableCell} ${styles.orderId}`}>#{order.id}</div>
                       <div className={styles.tableCell}>{determineTimeLapsed(order.createdAt)}</div>
                       <div className={styles.tableCell}>{formatCurrency({ amount: order.total })}</div>
-                      <OrderStatusPill status={order.status} />
+                      <OrderStatusModifier 
+                        orderId={order.id}
+                        status={order.status} 
+                      />
                     </div>
           })
         }

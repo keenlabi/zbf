@@ -4,6 +4,10 @@ import { RouteObject } from "react-router-dom";
 
 const ProductsRoutes:RouteObject[] = [
     {
+        path: "",
+        element: <Products />,
+    },
+    {
         path: "products",
         element: <Products />,
     },

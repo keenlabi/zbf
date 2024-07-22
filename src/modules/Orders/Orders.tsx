@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { FetchOrdersAction } from "src/shared/api/orders.api";
 import { useOrdersState } from "src/store/orders/orders.atom";
 import ComponentLoader from "src/shared/components/Loaders/ComponentLoader";
+import Pagination from "src/shared/components/Pagination";
+import EmptyList from "src/shared/components/EmptyList/EmptyList";
 
 export default function Orders() {
 
@@ -15,7 +17,7 @@ export default function Orders() {
 
     FetchOrdersAction()
     .then((response)=> {
-      setOrdersState(state => ({ ...state, orders: response.data.orders }));
+      setOrdersState(state => ({ ...state, ...response.data }));
       setFetchOrdersState(state => ({ ...state, status:"success" }));
     })
     .catch(()=> setFetchOrdersState(state=> ({ ...state, status: "failed" })))
@@ -29,7 +31,21 @@ export default function Orders() {
         ? <ComponentLoader />
         : <>
             <div className={styles.ordersHeading}>Orders</div>
-            <OrdersTable orders={ordersState.orders} />
+            {
+              ordersState.list.length
+              ? <>
+                  <OrdersTable orders={ordersState.list} />
+                  <Pagination
+                    currentPage={ordersState.currentPage}
+                    totalPages={ordersState.totalPages}
+                    goToPageAction={(newPageNumber)=> setOrdersState(state => ({ ...state, currentPage: newPageNumber }))}
+                  />
+                </>
+              : <EmptyList
+                  message={"You have no orders, start shopping now"}
+                  path={"/products"} 
+                />
+            }
           </>
       }
     </div>
