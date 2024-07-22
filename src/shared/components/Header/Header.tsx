@@ -42,6 +42,7 @@ export default function Header() {
                 </li>
                 {
                   authState.isAuthenticated &&
+                  userState.profile.role === "customer" &&
                   <li>
                     <Link to="/orders">Orders</Link>
                   </li>
