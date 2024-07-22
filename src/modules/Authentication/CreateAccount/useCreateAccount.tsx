@@ -99,7 +99,7 @@ export default function useCreateAccount() {
             status: "loading"
         }))
 
-        RegisterAction({
+        RegisterAction({ 
             email: emailModel.value!,
             password: passwordModel.value!
         })
