@@ -1,10 +1,6 @@
 import { useNavigate } from "react-router-dom";
-// import IconButton from "../Buttons/IconButton/IconButton";
 import styles from "./productcard.module.css";
-// import IconCart from "src/shared/assets/icons/cart.svg";
-import Image from "src/shared/assets/images/shoes.png";
 import formatCurrency from "src/shared/utility/formatCurrency";
-// import { useAuthStateValue } from "src/store/auth/auth.atom";
 
 interface ProductCardProps {
   id:string;
@@ -20,7 +16,7 @@ export default function ProductCard(props:ProductCardProps) {
 
   return (
     <div className={styles.ProductContainer} onClick={() => navigate(`/products/${props.id}`)}>
-      <img className={styles.productImage} src={Image} alt="" />
+      <img className={styles.productImage} src={props.image} alt="" />
      
       <div className={styles.ProductDetails}>
 
