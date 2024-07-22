@@ -5,7 +5,7 @@ export default function useFormValidator() {
 
     const [isFormValidated, setIsFormValidated] = useState(false);
 
-    function setInputField(inputValue:string|File|string[], model:IFormField, setModel:ISetFormField) {
+    function setInputField(inputValue:string|string[], model:IFormField, setModel:ISetFormField) {
         setFormField({
             inputValue,
             model, 

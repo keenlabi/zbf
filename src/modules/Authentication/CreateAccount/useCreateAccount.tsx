@@ -100,8 +100,8 @@ export default function useCreateAccount() {
         }))
 
         RegisterAction({
-            email: emailModel.value,
-            password: passwordModel.value
+            email: emailModel.value!,
+            password: passwordModel.value!
         })
         .then((response)=> {
             setUserState(state => ({ ...state, profile: response.data.user }));

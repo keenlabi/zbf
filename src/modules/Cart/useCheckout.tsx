@@ -89,8 +89,8 @@ export default function useCheckout() {
         setCheckoutForm(state => ({ ...state, status: "loading" }));
 
         CreateOrderAction({
-            address: checkoutAddressModel.value,
-            contact: checkoutContactModel.value
+            address: checkoutAddressModel.value!,
+            contact: checkoutContactModel.value!
         })
         .then(()=> setCheckoutForm(state=> ({ ...state, status: "success" })))
         .catch((error)=> {

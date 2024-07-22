@@ -20,7 +20,7 @@ export default function Footer() {
 
         <div className={styles.footer_top_right}>
           <InputField type="text" onInput={() => {}} prefixIcon={emailIcon} inputWidth="400px" backgroundColor="#fff" />
-          <PrimaryTextButton label="Subscribe" action={() => {}} extrastyle={styles.subscribe_btn} />
+          <PrimaryTextButton label="Subscribe" action={() => {}} extraStyle={styles.subscribe_btn} />
         </div>
       </div>
 
