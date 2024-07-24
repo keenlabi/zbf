@@ -10,7 +10,7 @@ import svgr from "vite-plugin-svgr";
 export default defineConfig({
   plugins: [react(), svgr()],
   server:{
-    port: 7001,
+    port: 7000,
     proxy: {
       "/api": {
         target: "http://localhost:7100",

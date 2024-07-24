@@ -10,7 +10,6 @@ import ComponentLoader from "src/shared/components/Loaders/ComponentLoader";
 import SizedBox from "src/shared/components/SizedBox";
 import useCheckout from "./useCheckout";
 import formatCurrency from "src/shared/utility/formatCurrency";
-import { FaCheckCircle } from "react-icons/fa";
 
 export default function Cart() {
 
@@ -133,22 +132,6 @@ export default function Cart() {
                 </div>
           }
         </>
-      }
-
-      {
-        isFormSubmitSuccess &&
-        <div className={styles.orderSuccess}>
-          <FaCheckCircle className={styles.orderSuccessIcon} />
-          <div>
-            <div className={styles.orderSuccessMessage}>Order placed successfully</div>
-            <SizedBox height="10px" />
-            <PrimaryTextButton
-              extraStyle={styles.orderSuccessButton}
-              label="Continue shopping"
-              action={()=>  navigate("/products")}
-            />
-          </div>
-        </div>
       }
     </div>
   );

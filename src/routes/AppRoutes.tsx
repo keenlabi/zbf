@@ -7,6 +7,7 @@ import OrderRoutes from "./OrdersRoutes";
 import PageNotFound from "src/modules/PageNotFound";
 import ShopRoutes from "./ShopRoutes";
 import { RouteObject } from "react-router-dom";
+import PaymentRoutes from "./PaymentRoutes";
 
 const AppRoutes: RouteObject[] = [
   ...AuthRoutes,
@@ -17,7 +18,8 @@ const AppRoutes: RouteObject[] = [
       ...ProductsRoutes,
       ...CartRoutes,
       ...OrderRoutes,
-      ...ShopRoutes
+      ...ShopRoutes,
+      ...PaymentRoutes
     ],
   },
   {

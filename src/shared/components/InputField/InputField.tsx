@@ -1,7 +1,7 @@
 import styles from "./inputfield.module.css";
 import iconShow from "src/shared/assets/icons/Show.svg";
 import iconHide from "src/shared/assets/icons/hide.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SizedBox from "../SizedBox";
 
 export interface IInputFieldModel {
@@ -17,7 +17,7 @@ export interface IInputFieldModel {
 }
 
 export interface IInputFieldProps {
-  type?:"text"|"password"|"number"|"email"|"file";
+  type?:"text"|"password"|"number"|"email"|"file"|"date"|"time"|"month";
   label?:string;
   name?:string;
   error?:string;
@@ -29,12 +29,19 @@ export interface IInputFieldProps {
   prefixIcon?:string;
   inputWidth?:string;
   backgroundColor?:string;
+  maxLength?:number;
 }
 
 export default function InputField(props: IInputFieldProps) {
 
+  const typesThatAreTextDefault = ["text","number","email","file","date","time","month"];
   const [currentSuffixIcon, setCurrentSuffixIcon] = useState(iconShow);
-  const [currentInputType, setCurrentInputType] = useState("password");
+
+  const [currentInputType, setCurrentInputType] = useState<string>(typesThatAreTextDefault.includes(props.type!) ? "text" : props.type!);
+
+  useEffect(() => {
+    if (currentInputType !== props.type) setCurrentInputType(props.type === "month" || props.type === "date" || props.type === "time" || props.type === "text" ? "text" : props.type!);
+  }, [currentInputType, props.type]);
 
   const handleChangeSuffixIcon = () => {
     if (currentSuffixIcon === iconShow) {
@@ -48,7 +55,7 @@ export default function InputField(props: IInputFieldProps) {
   };
 
   return (
-    <div className={styles.input_field_wrapper}>
+    <div className={styles.input_field_wrapper} style={{ width: props.inputWidth }}>
       {
         props.label && <label
           className={styles.label} 
@@ -57,19 +64,21 @@ export default function InputField(props: IInputFieldProps) {
       }
 
       <div className={styles.input_wrapper} style={props.backgroundColor ? { background: props.backgroundColor } : undefined}>
-        {props.prefixIcon ? (
+        {
+          props.prefixIcon &&
           <span className={styles.prefix_icon}>
             <img src={props.prefixIcon} alt="" />
           </span>
-        ) : null}
+        }
 
         <input
-          type={props.type === "password" ? currentInputType : props.type}
+          type={currentInputType}
           name={props.name}
-          style={props.inputWidth ? { width: props.inputWidth } : undefined}
           onChange={(e) => props.onInput(e.target.value)}
           disabled={props.disabled}
           placeholder={props.placeholder ? props.placeholder : undefined}
+          maxLength={props.maxLength}
+          onFocus={() =>  typesThatAreTextDefault.includes(props.type!) && setCurrentInputType(props.type!)}
         />
         {props.type === "password" ? (
           <span className={styles.suffix_icon} onClick={handleChangeSuffixIcon}>

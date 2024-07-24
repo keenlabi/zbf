@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
-import { CreateOrderAction } from "src/shared/api/orders.api";
+import { useNavigate } from "react-router-dom";
 import { IFormField, ISetFormField, setFormField } from "src/shared/components/FormWrapper";
-import { createAlert } from "src/store/alert/atom";
 import { useCartStateValue } from "src/store/cart/cart.atom";
+import { useSetNewOrderState } from "src/store/orders/newOrder.atom";
 
 export default function useCheckout() {
 
+    const navigate = useNavigate();
+
     const cartState = useCartStateValue();
+
+    const setNewOrderState = useSetNewOrderState();
 
     useEffect(()=> {
         let totalTemp = 0;
@@ -88,15 +92,16 @@ export default function useCheckout() {
     function handleCheckout() {
         setCheckoutForm(state => ({ ...state, status: "loading" }));
 
-        CreateOrderAction({
-            address: checkoutAddressModel.value!,
-            contact: checkoutContactModel.value!
-        })
-        .then(()=> setCheckoutForm(state=> ({ ...state, status: "success" })))
-        .catch((error)=> {
-            setCheckoutForm(state=> ({ ...state, status: "failed" }))
-            createAlert("error", error.message)
-        })
+        setNewOrderState(state => ({
+            ...state,
+            newOrder:{
+                address: checkoutAddressModel.value!,
+                contact: checkoutContactModel.value!,
+                totalPrice: cartTotal
+            }
+        }))
+
+        navigate("/payment");
     }
 
     return {

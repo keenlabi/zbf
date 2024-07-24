@@ -34,14 +34,17 @@
     font-size: var(--font-size-32);
 }
 .subHeading3 {
-    font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-24);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-20);
+    color: var(--dark-blue-accent-200);
 }
 .subHeading4 {
-    font-weight: var(--font-weight-semibold);
-    font-size: var(--font-size-22);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-17);
+    color: var(--dark-blue-accent-200);
 }
 .subHeading5 {
     font-weight: var(--font-weight-medium);
-    font-size: var(--font-size-20);
+    font-size: var(--font-size-15);
+    color: var(--dark-blue-accent-200);
 }

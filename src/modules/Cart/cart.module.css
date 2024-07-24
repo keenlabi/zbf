@@ -113,21 +113,3 @@
 .cartTotalItemValue {
   font-weight: var(--font-weight-semibold);
 }
-
-.orderSuccess {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 70vh;
-  gap: 1rem;
-
-  > .orderSuccessIcon {
-    font-size: 6rem;
-    color: var(--green-accent-900);
-  }
-}
-.orderSuccessMessage {
-  color: var(--secondary-text-color);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-24);
-}
